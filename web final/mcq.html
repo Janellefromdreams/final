@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Abai</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header id="header" class="fixed-top ">
+    <div class="contactback">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Abai<span>.</span></a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="works.html">Works</a></li>
+          <li><a class="nav-link scrollto " href="path.html">Path</a></li>
+          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
+          <li><a class="nav-link scrollto" href="mcq.html">MCQ</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+    </div>
+  </header><br><br><br>
+
+  <div class="mcq-container">
+    <h1>Multiple Choice Quiz</h1>
+
+  <div id="quiz">
+    <p>Question 1: What is the name of composition in video?</p>
+    <ul class="choices">
+      <li><input type="radio" name="question1" id="answer1a" value="a"> <label for="answer1a">Kozimnin qarasy</label></li>
+      <li><input type="radio" name="question1" id="answer1b" value="b"> <label for="answer1b">Boiy bulgan</label></li>
+      <li><input type="radio" name="question1" id="answer1c" value="c"> <label for="answer1c">Asempaz bolma arnege</label>
+    </ul>
+
+    <p>Question 2: What is the year of birth of Abai?</p>
+    <ul class="choices">
+      <li><input type="radio" name="question2" id="answer2a" value="a"> <label for="answer2a">1800</label></li>
+      <li><input type="radio" name="question2" id="answer2b" value="b"> <label for="answer2b">1945</label></li>
+      <li><input type="radio" name="question2" id="answer2c" value="c"> <label for="answer2c">1845</label>
+    </ul>
+
+    <p>Question 3: What is the name of the composition in music?</p>
+    <ul class="choices">
+      <li><input type="radio" name="question3" id="answer3a" value="a"> <label for="answer3a">Boiy bulgan</label></li>
+      <li><input type="radio" name="question3" id="answer3b" value="b"> <label for="answer3b">Kozimnin qarasy</label></li>
+      <li><input type="radio" name="question3" id="answer3c" value="c"> <label for="answer3c">Asempaz bolma arnege</label>
+    </ul>
+
+    <button onclick="calculateScore()">Submit Answers</button> 
+    <div id="result"></div>
+  </div>
+
+  <div id="results">
+    <h2>Results</h2>
+    <p id="score"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    function calculateScore() {
+        var score = 0;
+
+        // Question 1
+        var q1Answer = document.querySelector('input[name="question1"]:checked');
+        if (q1Answer && q1Answer.value === 'b') {
+            score++;
+        }
+
+        // Question 2
+        var q2Answer = document.querySelector('input[name="question2"]:checked');
+        if (q2Answer && q2Answer.value === 'c') {
+            score++;
+        }
+        
+        // Question 3
+        var q3Answer = document.querySelector('input[name="question3"]:checked');
+        if (q3Answer && q3Answer.value === 'b') {
+            score++;
+        }
+        
+        var resultContainer = document.getElementById('result');
+        resultContainer.textContent = 'Your score: ' + score + ' out of 3';
+    }
+    
+    
+    $(document).ready(function(){
+        $("#buttonani").click(function(){
+            var div = $("div");  
+            div.animate({left: '100px'}, "slow");
+        });
+    });
+</script>
+
+<style>
+
+body {
+  font-family: sans-serif;
+}
+
+.mcq-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#quiz {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+label {
+  cursor: pointer;
+}
+
+#results {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#score {
+  text-align: center;
+}
+</style>
+
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Abai<span>.</span></h3>
+              <p>
+                Astana IT University <br>
+                Astana, Kazakhstan<br><br>
+                <strong>Phone:</strong> +7 775 286 9091<br>
+                <strong>Email:</strong> zh.zhanibekova2004@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://twitter.com" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://facebook.com" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://instagram.com" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://linkedin.com" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="works.html">Works of Abai</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>View other sites</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Ibyrai</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Akhmet</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Bauyrzhan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dulat</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Who is next?</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Subscribe us for new updates!</h4>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Thank you for attending web-site!
+      </div>
+      <div class="credits">
+        Designed by Janelle
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
